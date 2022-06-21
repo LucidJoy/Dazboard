@@ -1,6 +1,16 @@
-import { Flex, Text, Button } from "@chakra-ui/react";
 import Head from "next/head";
 import { useMoralis } from "react-moralis";
+import {
+  Flex,
+  Text,
+  Button,
+  Box,
+  Tab,
+  Tabs,
+  TabList,
+  TabPanels,
+  TabPanel,
+} from "@chakra-ui/react";
 
 import Navbar from "../components/Navbar";
 
@@ -50,6 +60,29 @@ export default function Home() {
       </Head>
       <Flex direction='column' width='100vw' height='100vh'>
         <Navbar user={user} logout={logout} isLoggingOut={isLoggingOut} />
+        <Box flex={1} bgColor='purple.100' px='44' py='20'>
+          <Tabs
+            size='lg'
+            colorScheme='purple'
+            align='center'
+            variant='solid-rounded'
+          >
+            <TabList>
+              <Tab fontWeight='bold'>Profile</Tab>
+              <Tab fontWeight='bold'>Balance</Tab>
+              <Tab fontWeight='bold'>Transactions</Tab>
+              <Tab fontWeight='bold'>NFTs</Tab>
+              <Tab fontWeight='bold'>Send ETH</Tab>
+            </TabList>
+            <TabPanels>
+              <TabPanel>Profile</TabPanel>
+              <TabPanel>Balance</TabPanel>
+              <TabPanel>Transactions</TabPanel>
+              <TabPanel>NFTs</TabPanel>
+              <TabPanel>Send ETH</TabPanel>
+            </TabPanels>
+          </Tabs>
+        </Box>
       </Flex>
     </>
   );
