@@ -13,6 +13,8 @@ import {
 } from "@chakra-ui/react";
 
 import Navbar from "../components/Navbar";
+import Profile from "../components/Profile";
+import CustomContainer from "../components/CustomContainer";
 
 export default function Home() {
   const { isAuthenticated, authenticate, user, logout, isLoggingOut } =
@@ -61,12 +63,7 @@ export default function Home() {
       <Flex direction='column' width='100vw' height='100vh'>
         <Navbar user={user} logout={logout} isLoggingOut={isLoggingOut} />
         <Box flex={1} bgColor='purple.100' px='44' py='20'>
-          <Tabs
-            size='lg'
-            colorScheme='purple'
-            align='center'
-            variant='solid-rounded'
-          >
+          <Tabs colorScheme='purple' align='center' variant='solid-rounded'>
             <TabList>
               <Tab fontWeight='bold'>Profile</Tab>
               <Tab fontWeight='bold'>Balance</Tab>
@@ -75,7 +72,9 @@ export default function Home() {
               <Tab fontWeight='bold'>Send ETH</Tab>
             </TabList>
             <TabPanels>
-              <TabPanel>Profile</TabPanel>
+              <TabPanel>
+                <Profile user={user} />
+              </TabPanel>
               <TabPanel>Balance</TabPanel>
               <TabPanel>Transactions</TabPanel>
               <TabPanel>NFTs</TabPanel>
