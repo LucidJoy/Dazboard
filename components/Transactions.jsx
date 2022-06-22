@@ -18,7 +18,6 @@ const Transactions = ({ user }) => {
     if (data) {
       setTransactions(data.result);
     }
-    console.log(data);
   };
 
   useEffect(() => {

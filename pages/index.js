@@ -14,9 +14,10 @@ import {
 
 import Navbar from "../components/Navbar";
 import Profile from "../components/Profile";
-import CustomContainer from "../components/CustomContainer";
 import Balance from "../components/Balance";
 import Transactions from "../components/Transactions";
+import NFT from "../components/NFT";
+import Send from "../components/Send";
 
 export default function Home() {
   const { isAuthenticated, authenticate, user, logout, isLoggingOut } =
@@ -83,8 +84,12 @@ export default function Home() {
               <TabPanel>
                 <Transactions user={user} />
               </TabPanel>
-              <TabPanel>NFTs</TabPanel>
-              <TabPanel>Send ETH</TabPanel>
+              <TabPanel>
+                <NFT user={user} />
+              </TabPanel>
+              <TabPanel>
+                <Send user={user} />
+              </TabPanel>
             </TabPanels>
           </Tabs>
         </Box>
