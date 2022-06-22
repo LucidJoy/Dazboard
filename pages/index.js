@@ -15,6 +15,7 @@ import {
 import Navbar from "../components/Navbar";
 import Profile from "../components/Profile";
 import CustomContainer from "../components/CustomContainer";
+import Balance from "../components/Balance";
 
 export default function Home() {
   const { isAuthenticated, authenticate, user, logout, isLoggingOut } =
@@ -75,7 +76,9 @@ export default function Home() {
               <TabPanel>
                 <Profile user={user} />
               </TabPanel>
-              <TabPanel>Balance</TabPanel>
+              <TabPanel>
+                <Balance user={user} />
+              </TabPanel>
               <TabPanel>Transactions</TabPanel>
               <TabPanel>NFTs</TabPanel>
               <TabPanel>Send ETH</TabPanel>
